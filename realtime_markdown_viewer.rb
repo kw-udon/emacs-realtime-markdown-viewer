@@ -59,6 +59,11 @@ get '/static/:file.min.:ext' do |file, ext|
   send_file "static/#{file}.min.#{ext}"
 end
 
+get '/static/github.css' do
+  content_type "css"
+  send_file "static/github.css"
+end
+
 __END__
 @@ index
 <!doctype html>
@@ -68,7 +73,7 @@ __END__
     <title>Realtime Markdown Viewer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="/static/jquery.min.js"></script>
-    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/github.css">
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
     </script>
